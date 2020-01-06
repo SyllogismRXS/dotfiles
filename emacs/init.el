@@ -499,7 +499,6 @@ If the new path's directories does not exist, create them."
 
 (setq org-agenda-files (list "~/repos/private/org/inbox.org"
                              "~/repos/private/org/gtd.org"
-                             "~/repos/private/org/phone.org"
                              "~/repos/private/org/tickler.org"
                              ))
 
