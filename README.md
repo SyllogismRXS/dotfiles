@@ -8,7 +8,7 @@ My dot files
 
 ### bashrc
 
-    $ ln -s ~/repos/dotfiles/bashrc ~/.bashrc
+    $ echo "source ~/repos/dotfiles/bashrc" >> ~/.bashrc
 
 ### emacs
 
