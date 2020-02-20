@@ -14,7 +14,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
-
 ; list the packages you want
 (setq package-list
       '(flycheck company elpy

@@ -569,6 +569,23 @@ If the new path's directories does not exist, create them."
 
 (require 'org-habit)
 
+;; Setup org-roam
+;(use-package org-roam
+;      :after org
+;      :hook
+;      ((org-mode . org-roam-mode)
+;       (after-init . org-roam--build-cache-async) ;; optional!
+;       )
+;      :straight (:host github :repo "jethrokuan/org-roam" :branch "develop")
+;      :custom
+;      (org-roam-directory "~/repos/private/org")
+;      :bind
+;      ("C-c n l" . org-roam)
+;      ("C-c n t" . org-roam-today)
+;      ("C-c n f" . org-roam-find-file)
+;      ("C-c n i" . org-roam-insert)
+;      ("C-c n g" . org-roam-show-graph))
+;
 ;(setq org-agenda-custom-commands
 ;      '(("h" "Daily habits"
 ;         ((agenda ""))
