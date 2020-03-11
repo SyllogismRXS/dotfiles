@@ -19,7 +19,8 @@
       '(flycheck company elpy
         yasnippet auto-complete popup centered-cursor-mode dash
         flymake markdown-mode org-journal vlf helm cpputils-cmake neotree
-        visual-fill-column magit helm org-ref helm-projectile))
+        visual-fill-column magit helm org-ref helm-projectile emacsql
+        emacsql-sqlite))
 
 ; activate all the packages
 (package-initialize)

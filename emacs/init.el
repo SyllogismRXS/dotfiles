@@ -489,7 +489,13 @@ If the new path's directories does not exist, create them."
 
 (setq org-startup-folded nil)
 
-(setq org-journal-dir "~/repos/private/org/journal/")
+; org-journal
+;(setq org-journal-dir "~/repos/private/org/journal/")
+(setq org-journal-date-prefix "#+TITLE: ")
+(setq org-journal-file-format "%Y-%m-%d.org")
+(setq org-journal-dir "~/repos/private/org/roam")
+(setq org-journal-date-format "%A, %d %B %Y")
+(require 'org-journal)
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
@@ -1074,3 +1080,21 @@ If the new path's directories does not exist, create them."
 
 (require 'pddl-mode)
 (add-to-list 'auto-mode-alist '("\\.pddl\\'" . PDDL-mode))
+
+
+;; org-roam
+(add-to-list 'load-path "~/.emacs.d/repos/org-roam")
+(require 'org-roam)
+(setq org-roam-directory "~/repos/private/org/roam")
+(define-key org-roam-mode-map (kbd "C-c n l") #'org-roam)
+(define-key org-roam-mode-map (kbd "C-c n f") #'org-roam-find-file)
+(define-key org-roam-mode-map (kbd "C-c n b") #'org-roam-switch-to-buffer)
+(define-key org-roam-mode-map (kbd "C-c n g") #'org-roam-switch-to-buffer)
+(define-key org-roam-mode-map (kbd "C-c n t") #'org-roam-today)
+(define-key org-mode-map (kbd "C-c n i") #'org-roam-insert)
+(org-roam-mode +1)
+
+(require 'deft)
+(setq deft-extensions '("txt" "tex" "org"))
+(setq deft-directory "~/repos/private/org/roam")
+(setq deft-recursive t)
