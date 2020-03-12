@@ -426,7 +426,7 @@ If the new path's directories does not exist, create them."
 
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
-(setq reftex-default-bibliography '("./*.bib"))
+;(setq reftex-default-bibliography '("./*.bib"))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Check to see if server-running-p function is bound and only start server if
@@ -1008,12 +1008,23 @@ If the new path's directories does not exist, create them."
         "pdflatex -interaction nonstopmode -output-directory %o %f"))
 
 (setq org-latex-logfiles-extensions (quote ("asdf")))
+
+; org-ref configuration
 (require 'org-ref)
+(setq reftex-default-bibliography '("~/repos/private/org/roam/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/repos/private/org/roam/references-notes.org"
+      org-ref-default-bibliography '("~/repos/private/org/roam/references.bib"))
+
+; helm-bibtex configuration
+(setq bibtex-completion-bibliography "~/repos/private/org/roam/references.bib")
+
 (require 'org-ref-pdf)
 (require 'org-ref-url-utils)
 (require 'org-ref-latex)
 
-(setq org-ref-pdf-directory "~/Documents/pdfs")
+;(setq org-ref-pdf-directory "~/Documents/pdfs")
 
 (require 'taskjuggler-mode)
 (require 'magit)
