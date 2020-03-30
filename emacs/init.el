@@ -605,7 +605,7 @@ If the new path's directories does not exist, create them."
       '(("w" "Work" tags-todo "@work")
         ("h" "Home" tags-todo "@home")
         ("n" "Next" todo "NEXT")
-        ("v" "Van" tags-todo "@van")))
+        ("e" "Entrepreneur" tags-todo "@entrepreneur")))
 
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                (file+headline "~/repos/private/org/inbox.org" "Tasks")
@@ -622,7 +622,10 @@ If the new path's directories does not exist, create them."
                            ("~/repos/private/org/someday.org" :level . 1)
                            ("~/repos/private/org/tickler.org" :maxlevel . 1)))
 
-(setq org-tag-alist '( ("PROJECT" . ?p) ("@work" . ?w) ("@home" . ?h) ("@van" . ?v)))
+(setq org-tag-alist '( ("PROJECT" . ?p)
+                       ("@work" . ?w)
+                       ("@home" . ?h)
+                       ("@entrepreneur" . ?e)))
 
 ;; Debug / test functions
 (defun doodlebug ()
