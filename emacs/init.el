@@ -1096,17 +1096,17 @@ If the new path's directories does not exist, create them."
 (add-to-list 'auto-mode-alist '("\\.pddl\\'" . PDDL-mode))
 
 
-;; org-roam
-(add-to-list 'load-path "~/.emacs.d/repos/org-roam")
-(require 'org-roam)
-(setq org-roam-directory "~/repos/private/org/roam")
-(define-key org-roam-mode-map (kbd "C-c n l") #'org-roam)
-(define-key org-roam-mode-map (kbd "C-c n f") #'org-roam-find-file)
-(define-key org-roam-mode-map (kbd "C-c n b") #'org-roam-switch-to-buffer)
-(define-key org-roam-mode-map (kbd "C-c n g") #'org-roam-switch-to-buffer)
-(define-key org-roam-mode-map (kbd "C-c n t") #'org-roam-today)
-(define-key org-mode-map (kbd "C-c n i") #'org-roam-insert)
-(org-roam-mode +1)
+;;; org-roam
+;(add-to-list 'load-path "~/.emacs.d/repos/org-roam")
+;(require 'org-roam)
+;(setq org-roam-directory "~/repos/private/org/roam")
+;(define-key org-roam-mode-map (kbd "C-c n l") #'org-roam)
+;(define-key org-roam-mode-map (kbd "C-c n f") #'org-roam-find-file)
+;(define-key org-roam-mode-map (kbd "C-c n b") #'org-roam-switch-to-buffer)
+;(define-key org-roam-mode-map (kbd "C-c n g") #'org-roam-switch-to-buffer)
+;(define-key org-roam-mode-map (kbd "C-c n t") #'org-roam-today)
+;(define-key org-mode-map (kbd "C-c n i") #'org-roam-insert)
+;(org-roam-mode +1)
 
 (require 'deft)
 (setq deft-extensions '("txt" "tex" "org"))
