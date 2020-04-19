@@ -73,7 +73,7 @@
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (magit-popup dockerfile-mode texfrag helm-bibtex org-ref cmake-mode deft use-package magit yasnippet org-journal markdown-mode flymake-cppcheck flycheck cpputils-cmake company-c-headers cmake-project auto-complete))))
+    (helm-tramp magit-popup dockerfile-mode texfrag helm-bibtex org-ref cmake-mode deft use-package magit yasnippet org-journal markdown-mode flymake-cppcheck flycheck cpputils-cmake company-c-headers cmake-project auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
