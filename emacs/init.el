@@ -493,7 +493,7 @@ If the new path's directories does not exist, create them."
 ;(setq org-journal-dir "~/repos/private/org/journal/")
 (setq org-journal-date-prefix "#+TITLE: ")
 (setq org-journal-file-format "%Y-%m-%d.org")
-(setq org-journal-dir "~/repos/private/org/roam")
+(setq org-journal-dir "~/repos/private/org/journal")
 (setq org-journal-date-format "%A, %d %B %Y")
 (require 'org-journal)
 
