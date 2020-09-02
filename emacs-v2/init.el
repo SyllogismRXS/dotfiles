@@ -71,6 +71,7 @@
     (server-start))
 
 ;; Do not use `init.el` for `custom-*` code - use `custom-file.el`.
+;; TODO: Can we create this file automatically if it doesn't exist?
 (setq custom-file "~/.emacs.d/custom-file.el")
 
 ;; Assuming that the code in custom-file is execute before the code
@@ -87,12 +88,6 @@
 
 ; Initialize the package system
 (package-initialize)
-
-; If it is not installed, refresh package contents and install
-; use-package
-;(when (not (package-installed-p 'use-package))
-;  (package-refresh-contents)
-;  (package-install 'use-package))
 
 ; Refresh the package archive contents                                        ;
 (when (not package-archive-contents)
