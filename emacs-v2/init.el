@@ -35,6 +35,9 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+; Create a key binding for revert-buffer
+(global-set-key (kbd "C-c r") 'revert-buffer)
+
 ; use SHIFT-<left>, SHIFT-<right>, SHIFT-<up>, SHIFT-<down> to change
 ; windows
 (windmove-default-keybindings)
@@ -233,12 +236,45 @@
   :ensure t
   :defer nil
   :config
+  (setq org-directory "~/repos/private/org")
   (setq org-agenda-files (list "~/repos/private/org/inbox.org"
                                "~/repos/private/org/gtd.org"
                                "~/repos/private/org/tickler.org"
                                ))
+  (setq org-todo-keywords
+        '((sequence "TODO" "NEXT" "FEEDBACK" "|" "DONE" "DEFERRED" "MEETING")))
+  (setq org-log-done 'time) ; Create a timestamp when DONE
+  (setq org-archive-location "~/repos/private/org/archive/%s_archive::")
+  (setq org-agenda-custom-commands
+      '(("w" "Work" tags-todo "@work")
+        ("h" "Home" tags-todo "@home")
+        ("n" "Next" todo "NEXT")
+        ("e" "Entrepreneur" tags-todo "@entrepreneur")))
+  (setq org-refile-targets '(("~/repos/private/org/gtd.org" :maxlevel . 2)
+                             ("~/repos/private/org/someday.org" :level . 1)
+                             ("~/repos/private/org/tickler.org" :maxlevel . 1)))
+
+  (setq org-tag-alist '( ("PROJECT" . ?p)
+                         ("@work" . ?w)
+                         ("@home" . ?h)
+                         ("@entrepreneur" . ?e)))
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/repos/private/org/inbox.org" "Tasks")
+                                 "* TODO %i%?")
+                                ("m" "Meeting [inbox]" entry
+                                 (file+headline "~/repos/private/org/inbox.org" "Meetings")
+                                 "* MEETING %i%? %U")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/repos/private/org/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+  ; Fix the SHIFT+Arrow keys in org-mode (when not on headline)
+  (add-hook 'org-shiftup-final-hook 'windmove-up)
+  (add-hook 'org-shiftleft-final-hook 'windmove-left)
+  (add-hook 'org-shiftdown-final-hook 'windmove-down)
+  (add-hook 'org-shiftright-final-hook 'windmove-right)
   :bind
   ("C-c a" . org-agenda)
+  ("C-c c" . org-capture)
   )
 
 (use-package org-journal
