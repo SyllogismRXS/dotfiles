@@ -75,7 +75,7 @@
 
 ;; Do not use `init.el` for `custom-*` code - use `custom-file.el`.
 ;; TODO: Can we create this file automatically if it doesn't exist?
-(setq custom-file "~/.emacs.d/custom-file.el")
+(setq custom-file "~/repos/dotfiles/emacs-v2/custom-file.el")
 
 ;; Assuming that the code in custom-file is execute before the code
 ;; ahead of this line is not a safe assumption. So load this file
@@ -239,20 +239,19 @@
   (setq org-directory "~/repos/private/org")
   (setq org-agenda-files (list "~/repos/private/org/inbox.org"
                                "~/repos/private/org/gtd.org"
-                               "~/repos/private/org/tickler.org"
+                               "~/repos/private/org/schedule.org"
                                ))
   (setq org-todo-keywords
         '((sequence "TODO" "NEXT" "FEEDBACK" "|" "DONE" "DEFERRED" "MEETING")))
   (setq org-log-done 'time) ; Create a timestamp when DONE
   (setq org-archive-location "~/repos/private/org/archive/%s_archive::")
   (setq org-agenda-custom-commands
-      '(("w" "Work" tags-todo "@work")
-        ("h" "Home" tags-todo "@home")
+      '(("h" "Home" tags-todo "@home")
         ("n" "Next" todo "NEXT")
         ("e" "Entrepreneur" tags-todo "@entrepreneur")))
   (setq org-refile-targets '(("~/repos/private/org/gtd.org" :maxlevel . 2)
                              ("~/repos/private/org/someday.org" :level . 1)
-                             ("~/repos/private/org/tickler.org" :maxlevel . 1)))
+                             ("~/repos/private/org/schedule.org" :maxlevel . 1)))
 
   (setq org-tag-alist '( ("PROJECT" . ?p)
                          ("@work" . ?w)
@@ -264,9 +263,9 @@
                                 ("m" "Meeting [inbox]" entry
                                  (file+headline "~/repos/private/org/inbox.org" "Meetings")
                                  "* MEETING %i%? %U")
-                                ("T" "Tickler" entry
-                                 (file+headline "~/repos/private/org/tickler.org" "Tickler")
-                                 "* %i%? \n %U")))
+                                ("s" "Schedule" entry
+                                 (file "~/repos/private/org/schedule.org")
+                                 "* %^{Event Name} \n  :PROPERTIES:\n  :calendar-id: kevin.demarco@gmail.com\n  :END:\n:org-gcal:\n%i%?\n:END:")))
   ; Fix the SHIFT+Arrow keys in org-mode (when not on headline)
   (add-hook 'org-shiftup-final-hook 'windmove-up)
   (add-hook 'org-shiftleft-final-hook 'windmove-left)
@@ -318,6 +317,18 @@
   (setq projectile-switch-project-action 'helm-projectile)
   :bind
   ("C-x C-g" . helm-projectile)
+  )
+
+(use-package org-gcal
+  :ensure t
+  :defer nil
+  :config
+  (setq org-gcal-client-id "411566505301-idk29ar5mp596dcllvg9dksiisc4shda.apps.googleusercontent.com"
+        org-gcal-client-secret "ZiJOjE8zPNXWA2dBTtIq450v"
+        org-gcal-file-alist '(("kevin.demarco@gmail.com" .  "~/repos/private/org/schedule.org"))
+        )
+  ;(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
+  ;(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync) ))
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
