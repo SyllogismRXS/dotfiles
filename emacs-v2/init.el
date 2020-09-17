@@ -332,6 +332,21 @@
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Setup Google C / C++ Style
+(use-package google-c-style
+  :ensure t
+  :defer nil
+  :config
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  )
+
+;; (use-package flycheck-google-cpplint
+;;   :ensure t
+;;   :defer nil
+;;   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; When in c/c++ mode, specify where to find the other header or source
 ; file. TODO : Should this be in a "use-package" somehow?
 (add-hook 'c-mode-common-hook
