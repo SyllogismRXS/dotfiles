@@ -204,6 +204,12 @@
    ("C-k" . helm-previous-line))
   )
 
+; Helm
+(use-package helm-ag
+  :ensure t
+  :defer nil
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load magit for git
 (use-package magit
