@@ -25,6 +25,8 @@
 ; Display the line number at the bottom of emacs
 (line-number-mode t)
 
+(setq-default fill-column 79)
+
 (setq user-mail-address "kevin.demarco@gmail.com")
 (setq user-website "http://www.kevindemarco.com")
 (setq user-full-name "Kevin DeMarco")
