@@ -420,3 +420,19 @@
 ;  :config
 ;  (require 'spaceline-config)
 ;  (spaceline-spacemacs-theme))
+
+
+; Starting formatter for LaTeX docs
+;(defun my/replace-dot-with-newline ()
+;  (interactive)
+;  (replace-regexp "\\.\\W*" ".\n"))
+;
+;(defun my/replace-newline-with-space ()
+;  (interactive)
+;  (replace-regexp "\\([a-zA-Z0-9]\\)\n" "\\1 "))
+;
+;(defun my/latex-clean-lines ()
+;  (interactive)
+;  (my/replace-dot-with-newline)
+;  (delete-trailing-whitespace)
+;  (my/replace-newline-with-space))
