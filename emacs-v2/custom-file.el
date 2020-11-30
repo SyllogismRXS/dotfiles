@@ -8,7 +8,7 @@
  '(indent-tabs-mode nil)
  '(org-agenda-files
    (quote
-    ("~/repos/private/org/inbox.org" "~/repos/private/org/gtd.org" "~/repos/private/org/schedule.org" "/home/syllogismrxs/repos/private/org/journal/2020-11-12.org")))
+    ("~/repos/private/org/inbox.org" "~/repos/private/org/gtd.org" "~/repos/private/org/schedule.org" "/home/syllogismrxs/repos/private/org/journal/2020-11-12.org")) t)
  '(package-archives
    (quote
     (("marmalade" . "https://marmalade-repo.org/packages/")
@@ -16,7 +16,7 @@
      ("elpa" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package)))
+    (auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package)))
  '(use-package-always-defer t)
  '(use-package-always-ensure nil)
  '(use-package-verbose nil))
