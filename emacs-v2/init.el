@@ -275,6 +275,7 @@
                                  (file "~/repos/private/org/schedule.org")
                                  "* %^{Event Name} \n  :PROPERTIES:\n  :calendar-id: kevin.demarco@gmail.com\n  :END:\n:org-gcal:\n%i%?\n:END:")))
   (setq org-clock-persist 'history)
+  (setq org-clock-idle-time 15)
   (org-clock-persistence-insinuate)
   ; Fix the SHIFT+Arrow keys in org-mode (when not on headline)
   (add-hook 'org-shiftup-final-hook 'windmove-up)
