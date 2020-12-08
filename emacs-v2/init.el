@@ -393,6 +393,14 @@
   ;(setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))
   )
 
+; Use nxml-mode for common ROS and Gazebo extensions
+(add-to-list 'auto-mode-alist '("\\.launch\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.world\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.sdf\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.xacro\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.urdf\\'" . nxml-mode))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; When in c/c++ mode, specify where to find the other header or source
 ; file. TODO : Should this be in a "use-package" somehow?
