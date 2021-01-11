@@ -206,11 +206,31 @@
    ("C-k" . helm-previous-line))
   )
 
-; Helm
+; helm-ag
 (use-package helm-ag
   :ensure t
   :defer nil
+  )
+
+; helm-tramp
+(use-package helm-tramp
+  :ensure t
+  :config
+  (setq tramp-default-method "ssh")
+  ; Don't make a backup files and lockfiles at remote server, it will be saved
+  ; faster.
+  (setq make-backup-files nil
+        create-lockfiles nil)
+
+  ; Turn off slow extensions when executing helm-tramp
+  (add-hook 'helm-tramp-pre-command-hook '(lambda () (projectile-mode 0)))
+  ; Turn on extensions when executing helm-tramp-quit command.
+  (add-hook 'helm-tramp-quit-hook '(lambda () (projectile-mode 1)))
+  :bind
+  (("C-c s" . helm-tramp)
+  )
 )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load magit for git
