@@ -276,6 +276,10 @@
   (setq org-agenda-custom-commands
       '(("h" "Home" tags-todo "@home")
         ("n" "Next" todo "NEXT")
+        ("s" "Side Project" todo "@side")
+        ("c" "Consulting" tags-todo "@consulting")
+        ("l" "Learning" tags-todo "@learning")
+        ("r" "RIF Robotics" tags-todo "@rif")
         ("e" "Entrepreneur" tags-todo "@entrepreneur")))
   (setq org-refile-targets '(("~/repos/private/org/gtd.org" :maxlevel . 2)
                              ("~/repos/private/org/someday.org" :level . 1)
