@@ -276,7 +276,7 @@
   (setq org-agenda-custom-commands
       '(("h" "Home" tags-todo "@home")
         ("n" "Next" todo "NEXT")
-        ("s" "Side Project" todo "@side")
+        ("p" "Side Projects" tags-todo "@side")
         ("c" "Consulting" tags-todo "@consulting")
         ("l" "Learning" tags-todo "@learning")
         ("r" "RIF Robotics" tags-todo "@rif")
@@ -285,9 +285,10 @@
                              ("~/repos/private/org/someday.org" :level . 1)
                              ("~/repos/private/org/schedule.org" :maxlevel . 1)))
 
-  (setq org-tag-alist '( ("PROJECT" . ?p)
-                         ("@work" . ?w)
-                         ("@home" . ?h)
+  (setq org-tag-alist '( ("@side" . ?s)
+                         ("@consulting" . ?c)
+                         ("@learning" . ?l)
+                         ("@rif" . ?r)
                          ("@entrepreneur" . ?e)))
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                  (file+headline "~/repos/private/org/inbox.org" "Tasks")
