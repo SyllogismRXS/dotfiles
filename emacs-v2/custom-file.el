@@ -16,7 +16,7 @@
      ("elpa" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (pdf-tools dockerfile-mode yaml-mode helm-tramp lua-mode markdown-mode nxml-mode auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package)))
+    (bazel-mode pdf-tools dockerfile-mode yaml-mode helm-tramp lua-mode markdown-mode nxml-mode auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package)))
  '(use-package-always-defer t)
  '(use-package-always-ensure nil)
  '(use-package-verbose nil))
