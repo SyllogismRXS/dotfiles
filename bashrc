@@ -28,3 +28,8 @@ export PATH=~/repos/private/scripts:${PATH}
 
 alias ec='emacsclient'
 export EDITOR="emacsclient"
+
+# Don't make it easy to use "rm"
+alias rm='echo "This is not the command you are looking for. Use \"trash\"."; false'
+# If you really want to use rm, simply prepend a slash to bypass the alias:
+# \rm file-without-hope
