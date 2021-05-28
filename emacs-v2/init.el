@@ -27,6 +27,9 @@
 
 (setq-default fill-column 79)
 
+; The value is in 1/10pt, so 130 will give you 130pt, etc.
+(set-face-attribute 'default nil :height 130)
+
 (setq user-mail-address "kevin.demarco@gmail.com")
 (setq user-website "http://www.kevindemarco.com")
 (setq user-full-name "Kevin DeMarco")
