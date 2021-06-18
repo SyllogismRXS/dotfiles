@@ -256,10 +256,10 @@
   )
 
 (use-package deft
-  :ensure t
+  :bind ("<f8>" . deft)
   :config
-  (setq deft-extensions '("txt" "tex" "org"))
-  (setq deft-directory "~/repos/private/org/roam")
+  (setq deft-extensions '("txt" "tex" "org" "md" "text"))
+  (setq deft-directory "~/repos/private/org")
   (setq deft-recursive t)
   )
 
