@@ -30,6 +30,12 @@
 ; The value is in 1/10pt, so 130 will give you 130pt, etc.
 (set-face-attribute 'default nil :height 130)
 
+; Disable lockfiles
+(setq create-lockfiles nil)
+
+; Set indent level to 2 in javscript mode
+(setq js-indent-level 2)
+
 (setq user-mail-address "kevin.demarco@gmail.com")
 (setq user-website "http://www.kevindemarco.com")
 (setq user-full-name "Kevin DeMarco")
