@@ -8,7 +8,7 @@
  '(indent-tabs-mode nil)
  '(org-agenda-files
    (quote
-    ("~/repos/private/org/inbox.org" "~/repos/private/org/gtd.org" "~/repos/private/org/schedule.org" "/home/syllogismrxs/repos/private/org/journal/2021-08-05.org")))
+    ("~/repos/private/org/inbox.org" "~/repos/private/org/gtd.org" "~/repos/private/org/schedule.org" "/home/syllogismrxs/repos/private/org/journal/2021-08-06.org")))
  '(package-archives
    (quote
     (("marmalade" . "https://marmalade-repo.org/packages/")
