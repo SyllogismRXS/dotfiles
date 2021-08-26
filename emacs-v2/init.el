@@ -204,6 +204,10 @@
 (use-package helm
   :ensure t
   :defer nil
+  :config
+  (require 'helm-config)
+  :init
+  (helm-mode 1) ; Needed for org-roam to autocomplete correctly
   :bind
   (("M-x"     . helm-M-x)
    ("C-x C-f" . helm-find-files)
@@ -212,7 +216,10 @@
    ("M-y"     . helm-show-kill-ring)
    :map helm-map
    ("C-j" . helm-next-line)
-   ("C-k" . helm-previous-line))
+   ("C-k" . helm-previous-line)
+   ("C-z" . helm-select-action)
+   ("<tab>" . helm-execute-persistent-action)
+   )
   )
 
 ; helm-ag
@@ -321,17 +328,50 @@
   ("C-c c" . org-capture)
   )
 
-(use-package org-journal
+;(use-package org-journal
+;  :ensure t
+;  :defer nil
+;  :custom
+;  (org-journal-date-prefix "#+TITLE: ")
+;  (org-journal-file-format "%Y-%m-%d.org")
+;  (org-journal-dir "~/repos/private/org/journal")
+;  (org-journal-date-format "%A, %d %B %Y")
+;  (org-journal-enable-agenda-integration t)
+;  :bind
+;  ("C-c j" . org-journal-new-entry)
+;  )
+
+(use-package org-roam
   :ensure t
-  :defer nil
+  :init
+  (setq org-roam-v2-ack t)
   :custom
-  (org-journal-date-prefix "#+TITLE: ")
-  (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-dir "~/repos/private/org/journal")
-  (org-journal-date-format "%A, %d %B %Y")
-  (org-journal-enable-agenda-integration t)
+  (org-roam-directory "~/repos/private/org/roam-v2")
+  (org-roam-completion-everywhere t)
   :bind
-  ("C-c j" . org-journal-new-entry))
+  ("C-c j" . org-roam-dailies-capture-today)
+  (("C-c n l" . org-roam-buffer-toggle)
+   ("C-c n f" . org-roam-node-find)
+   ("C-c n g" . org-roam-graph)
+   ("C-c n i" . org-roam-node-insert)
+   :map org-mode-map
+   ("C-M-i" . completion-at-point)
+   :map org-roam-dailies-map
+   ("Y" . org-roam-dailies-capture-yesterday)
+   ("T" . org-roam-dailies-capture-tomorrow)
+   )
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
+  :config
+  (org-roam-db-autosync-mode)
+  (setq org-roam-dailies-directory "journal/")
+  (setq org-roam-dailies-capture-templates
+        '(("d" "default" entry "* %<%I:%M %p>: %?"
+           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+  ;; If using org-roam-protocol
+  (require 'org-roam-protocol)
+  (require 'org-roam-dailies) ;; Ensure the keymap is available
+  )
 
 (use-package multi-term
   :ensure t
