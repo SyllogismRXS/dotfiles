@@ -326,6 +326,8 @@
   :bind
   ("C-c a" . org-agenda)
   ("C-c c" . org-capture)
+  ("C-c C-x o" . org-clock-out)
+  ("C-c C-x l" . org-clock-in-last)
   )
 
 ;(use-package org-journal
