@@ -50,6 +50,10 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "sky/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "xresources/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -316,7 +320,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    --awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
