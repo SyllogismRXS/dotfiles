@@ -323,6 +323,7 @@
   (add-hook 'org-shiftleft-final-hook 'windmove-left)
   (add-hook 'org-shiftdown-final-hook 'windmove-down)
   (add-hook 'org-shiftright-final-hook 'windmove-right)
+  (add-to-list 'org-file-apps '("\\.pdf" . "evince %s"))
   :bind
   ("C-c a" . org-agenda)
   ("C-c c" . org-capture)
@@ -369,7 +370,13 @@
   (setq org-roam-dailies-directory "journal/")
   (setq org-roam-dailies-capture-templates
         '(("d" "default" entry "* %<%I:%M %p>: %?"
-           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n\
+#+OPTIONS: toc:nil num:nil author:nil date:nil\n\
+#+STARTUP: showall align\n\
+#+LaTeX_CLASS: article\n\
+#+LaTeX_CLASS_OPTIONS: [9pt,twocolumn,portrait]\n\
+#+LATEX_HEADER: \\usepackage[margin=0.5in]{geometry}\n\
+#+LATEX_HEADER: \\usepackage{enumitem}\n"))))
   ;; If using org-roam-protocol
   (require 'org-roam-protocol)
   (require 'org-roam-dailies) ;; Ensure the keymap is available
