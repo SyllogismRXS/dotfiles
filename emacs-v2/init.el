@@ -495,6 +495,7 @@
 (add-to-list 'auto-mode-alist '("\\.xacro\\'" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.urdf\\'" . nxml-mode))
 
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . c-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; When in c/c++ mode, specify where to find the other header or source
