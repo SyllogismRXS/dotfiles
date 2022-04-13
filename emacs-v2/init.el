@@ -284,6 +284,7 @@
   (setq org-agenda-files (list "~/repos/private/org/inbox.org"
                                "~/repos/private/org/gtd.org"
                                "~/repos/private/org/schedule.org"
+                               "~/repos/private/org/phone.org"
                                ))
   (setq org-todo-keywords
         '((sequence "TODO" "NEXT" "FEEDBACK" "|" "DONE" "DEFERRED" "MEETING")))
