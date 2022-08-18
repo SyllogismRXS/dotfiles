@@ -526,6 +526,8 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "4" } },
     { rule = { class = "discord" },
       properties = { screen = 2, tag = "9" } },
+    { rule = { class = "Slack" },
+      properties = { screen = 2, tag = "8" } },
 }
 -- }}}
 

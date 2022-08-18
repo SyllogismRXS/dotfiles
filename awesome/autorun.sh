@@ -21,4 +21,6 @@ run autokey-gtk
 
 LD_LIBRARY_PATH=/home/syllogismrxs/apps/Discord run /home/syllogismrxs/apps/Discord/Discord
 
+run slack
+
 run xscreensaver -no-splash
