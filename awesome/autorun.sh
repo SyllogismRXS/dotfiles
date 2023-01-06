@@ -13,7 +13,7 @@ run nm-applet
 
 run volumeicon
 
-run autokey-gtk
+#run autokey-gtk
 
 #run blueman-applet
 # xfce4-power-manager
