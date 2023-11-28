@@ -320,7 +320,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    --awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
