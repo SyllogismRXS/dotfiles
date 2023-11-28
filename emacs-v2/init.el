@@ -205,7 +205,7 @@
   :ensure t
   :defer nil
   :config
-  (require 'helm-config)
+  ;(require 'helm-config)
   :init
   (helm-mode 1) ; Needed for org-roam to autocomplete correctly
   :bind
