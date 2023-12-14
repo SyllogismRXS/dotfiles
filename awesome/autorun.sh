@@ -19,7 +19,8 @@ run volumeicon
 # xfce4-power-manager
 # volumeicon
 
-LD_LIBRARY_PATH=/home/syllogismrxs/apps/Discord run /home/syllogismrxs/apps/Discord/Discord
+#LD_LIBRARY_PATH=/home/syllogismrxs/apps/Discord run /home/syllogismrxs/apps/Discord/Discord
+run discord
 
 run slack
 
