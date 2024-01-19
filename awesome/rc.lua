@@ -2,6 +2,25 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+------------------------------------------
+-- Determine which computer is being used
+-- see if the file exists
+function file_exists(file)
+  local f = io.open(file, "rb")
+  if f then f:close() end
+  return f ~= nil
+end
+
+local file_path = os.getenv("HOME") .. "/.config/awesome.computer_name"
+local computer_name = 'syllo-gpu' -- Default
+
+if file_exists(file_path) then
+   file = io.open(file_path, "r")
+   computer_name = file:read()
+end
+------------------------------------------
+
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -14,6 +33,12 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+local battery_widget
+if computer_name == "alien" then
+   battery_widget = require("battery-widget")
+end
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -49,7 +74,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "syllo"))
+--local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "syllo")
+--beautiful.init(theme_path)
+--beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/syllo-zenburn/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/syllo-default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "sky/theme.lua")
@@ -221,7 +251,28 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
+    if computer_name == "alien" then
+       s.mywibox:setup {
+          layout = wibox.layout.align.horizontal,
+          { -- Left widgets
+             layout = wibox.layout.fixed.horizontal,
+             mylauncher,
+             s.mytaglist,
+             s.mypromptbox,
+          },
+          s.mytasklist, -- Middle widget
+          { -- Right widgets
+             layout = wibox.layout.fixed.horizontal,
+             mykeyboardlayout,
+             wibox.widget.systray(),
+             battery_widget {
+             },
+             mytextclock,
+             s.mylayoutbox,
+          },
+       }
+    else
+       s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
@@ -238,6 +289,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
+    end
 end)
 -- }}}
 
@@ -465,6 +517,11 @@ clientbuttons = gears.table.join(
 root.keys(globalkeys)
 -- }}}
 
+local second_display_num = 2
+if computer_name == 'alien' then
+   second_display_num = 1
+end
+
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
@@ -525,9 +582,9 @@ awful.rules.rules = {
     { rule = { class = "gazebo" },
       properties = { screen = 1, tag = "4" } },
     { rule = { class = "discord" },
-      properties = { screen = 2, tag = "9" } },
+      properties = { screen = second_display_num, tag = "9" } },
     { rule = { class = "Slack" },
-      properties = { screen = 2, tag = "8" } },
+      properties = { screen = second_display_num, tag = "8" } },
 }
 -- }}}
 
