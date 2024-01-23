@@ -13,7 +13,7 @@ theme.wallpaper = themes_path .. "syllo-zenburn/background.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+theme.font      = "sans 10"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"

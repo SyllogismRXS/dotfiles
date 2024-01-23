@@ -12,7 +12,7 @@ function file_exists(file)
 end
 
 local file_path = os.getenv("HOME") .. "/.config/awesome.computer_name"
-local computer_name = 'syllo-gpu' -- Default
+local computer_name = "syllo-gpu" -- Default
 
 if file_exists(file_path) then
    file = io.open(file_path, "r")
@@ -77,8 +77,8 @@ end
 --beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "syllo"))
 --local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "syllo")
 --beautiful.init(theme_path)
---beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/zenburn/theme.lua")
-beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/zenburn/theme.lua")
+--beautiful.init(gears.filesystem.get_configuration_dir () .. "/themes/default/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 --beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
@@ -656,3 +656,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 os.execute("xset r rate 220 30")
 
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+
+-- System specific shell script
+awful.spawn.with_shell("~/.config/awesome/autorun_" .. computer_name  .. ".sh")
