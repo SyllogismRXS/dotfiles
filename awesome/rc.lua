@@ -12,7 +12,7 @@ function file_exists(file)
 end
 
 local file_path = os.getenv("HOME") .. "/.config/awesome.computer_name"
-local computer_name = "syllo-gpu" -- Default
+local computer_name = "desktop-single-screen" -- Default
 
 if file_exists(file_path) then
    file = io.open(file_path, "r")
@@ -518,7 +518,7 @@ root.keys(globalkeys)
 -- }}}
 
 local second_display_num = 2
-if computer_name == 'alien' then
+if computer_name == 'alien' or computer_name == 'desktop-single-screen' then
    second_display_num = 1
 end
 
@@ -658,4 +658,7 @@ os.execute("xset r rate 220 30")
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- System specific shell script
-awful.spawn.with_shell("~/.config/awesome/autorun_" .. computer_name  .. ".sh")
+autorun_computer_name = os.getenv("HOME") .. "/.config/awesome/autorun_" .. computer_name  .. ".sh"
+if file_exists(autorun_computer_name) then
+   awful.spawn.with_shell(autorun_computer_name)
+end

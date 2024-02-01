@@ -6,4 +6,3 @@ function run {
     $@&
   fi
 }
-touch ~/running_alien.txt
