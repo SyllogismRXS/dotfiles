@@ -99,8 +99,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -578,8 +578,8 @@ awful.rules.rules = {
     --{ rule = { class = "Firefox" },
     --  properties = { screen = 1, tag = "1" } },
     { rule = { class = "rviz" },
-      properties = { screen = 1, tag = "4" } },
-    { rule = { class = "gazebo" },
+      properties = { screen = 1, tag = "3" } },
+    { rule = { class = "Gazebo" },
       properties = { screen = 1, tag = "4" } },
     { rule = { class = "discord" },
       properties = { screen = second_display_num, tag = "9" } },
