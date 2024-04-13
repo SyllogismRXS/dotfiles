@@ -227,6 +227,9 @@
 (use-package helm-ag
   :ensure t
   :defer nil
+  :bind
+  (("C-c f"     . helm-ag)
+   )
   )
 
 ; helm-tramp
