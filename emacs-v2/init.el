@@ -123,6 +123,8 @@
 ; Used for debugging the loading of packages
 (custom-set-variables '(use-package-verbose nil))
 
+(require 'tj3-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Install icons
 (use-package all-the-icons
