@@ -35,7 +35,7 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 local battery_widget
-if computer_name == "alien" then
+if computer_name == "alien" or computer_name == "awm16r2" then
    battery_widget = require("battery-widget")
 end
 
@@ -251,7 +251,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    if computer_name == "alien" then
+    if computer_name == "alien" or computer_name == "awm16r2" then
        s.mywibox:setup {
           layout = wibox.layout.align.horizontal,
           { -- Left widgets
@@ -518,7 +518,7 @@ root.keys(globalkeys)
 -- }}}
 
 local second_display_num = 2
-if computer_name == 'alien' or computer_name == 'desktop-single-screen' then
+if computer_name == 'alien' or computer_name == 'awm16r2' or computer_name == 'desktop-single-screen' then
    second_display_num = 1
 end
 
