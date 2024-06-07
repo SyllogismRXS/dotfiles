@@ -373,6 +373,10 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ }, "F11", function () awful.util.spawn("xrandr -s 1920x1200") end),
+    awful.key({ modkey }, "F11", function () awful.util.spawn("xrandr -s 2560x1600") end),
+    --awful.key({ }, "F10", function () awful.util.spawn("xinput set-prop \"$(xinput list --name-only | grep -i touch)\" \"libinput Tapping Enabled\" 0") end),
+    --awful.key({ modkey }, "F10", function () awful.util.spawn("xinput set-prop \"$(xinput list --name-only | grep -i touch)\" \"libinput Tapping Enabled\" 1") end),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
