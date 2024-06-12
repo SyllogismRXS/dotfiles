@@ -266,6 +266,7 @@ awful.screen.connect_for_each_screen(function(s)
              mykeyboardlayout,
              wibox.widget.systray(),
              battery_widget {
+                adapter = "BAT0",
              },
              mytextclock,
              s.mylayoutbox,
