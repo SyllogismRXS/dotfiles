@@ -33,3 +33,14 @@ export EDITOR="emacsclient"
 alias rm='echo "This is not the command you are looking for. Use \"trash\"."; false'
 # If you really want to use rm, simply prepend a slash to bypass the alias:
 # \rm file-without-hope
+
+# Direnv setup
+eval "$(direnv hook bash)"
+
+PATH="~/.local/bin":${PATH}
+
+# Setup ruby vars
+export GEM_HOME="${HOME}/gems"
+export PATH="${GEM_HOME}/bin:${PATH}"
+
+source /usr/share/doc/fzf/examples/key-bindings.bash
