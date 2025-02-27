@@ -374,8 +374,8 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 
     awful.key({ }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
-    awful.key({ }, "F11", function () awful.util.spawn("xrandr -s 1920x1200") end),
-    awful.key({ modkey }, "F11", function () awful.util.spawn("xrandr -s 2560x1600") end),
+    awful.key({ }, "F11", function () awful.util.spawn("xrandr --output eDP-1 --scale 0.75x0.75") end),
+    awful.key({ modkey }, "F11", function () awful.util.spawn("xrandr --output eDP-1 --scale 1x1") end),
 
     awful.key({ modkey, "Control" }, "n", function () awful.util.spawn("gnome-terminal -- bash -c \"docker exec -it --user ros rtp_jazzy_nvidia /bin/bash\"") end,
        {description = "Launch gnome-terminal and step into ROS container", group = "screen"}),
