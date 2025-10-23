@@ -96,8 +96,7 @@
 ; Require package and install packages from melpa
 (require 'package)
 (custom-set-variables '(package-archives
-                        '(("marmalade" . "https://marmalade-repo.org/packages/")
-                          ("melpa"     . "https://melpa.org/packages/")
+                        '(("melpa"     . "https://melpa.org/packages/")
                           ("elpa"      . "https://elpa.gnu.org/packages/"))))
 
 ; Initialize the package system
@@ -122,8 +121,6 @@
 
 ; Used for debugging the loading of packages
 (custom-set-variables '(use-package-verbose nil))
-
-(require 'tj3-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Install icons
@@ -226,6 +223,8 @@
   )
 
 ; helm-ag
+; Note: Not in melpa right now.
+; Installed via package-vc-install https://github.com/emacsattic/helm-ag
 (use-package helm-ag
   :ensure t
   :defer nil
