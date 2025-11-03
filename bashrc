@@ -44,3 +44,6 @@ export GEM_HOME="${HOME}/gems"
 export PATH="${GEM_HOME}/bin:${PATH}"
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
+
+alias tapping-enable="xinput set-prop \"$(xinput list --name-only | grep -i touch)\" \"libinput Tapping Enabled\" 1"
+alias tapping-disable="xinput set-prop \"$(xinput list --name-only | grep -i touch)\" \"libinput Tapping Enabled\" 0"
