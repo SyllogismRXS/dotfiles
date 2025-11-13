@@ -14,7 +14,11 @@
  '(package-selected-packages
    '(tagedit lsp-dart tj3-mode cmake-mode org-drill sqlite sqlite3 darkroom org-roam org-roam-bibtex docker-tramp docker-compose-mode yaml robot-mode bazel-mode pdf-tools dockerfile-mode yaml-mode helm-tramp lua-mode markdown-mode nxml-mode auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package))
  '(package-vc-selected-packages
-   '((helm-ag :vc-backend Git :url "https://github.com/emacsattic/helm-ag.git")))
+   '((helm-ag :vc-backend Git :url
+              #("https://github.com/emacsattic/helm-ag" 0 36
+                (face font-lock-comment-face)
+                36 37
+                (rear-nonsticky t face font-lock-comment-face)))))
  '(use-package-always-defer t)
  '(use-package-always-ensure nil)
  '(use-package-verbose nil))
