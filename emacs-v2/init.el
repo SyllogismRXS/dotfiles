@@ -402,21 +402,18 @@
 
 (use-package projectile
   :ensure t
-  :defer nil
-  :init
-  :config
-  (setq projectile-completion-system 'helm)
-  )
+  :init (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 
 (use-package helm-projectile
   :ensure t
-  :defer nil
-  :init
-  (helm-projectile-on)
-  :config
-  (setq projectile-switch-project-action 'helm-projectile)
-  :bind
-  ("C-x C-g" . helm-projectile)
+  :after (helm projectile) ; Ensure helm and projectile are loaded first
+  :bind (
+         ("C-S-P" . helm-projectile-switch-project)
+         ("C-x C-g" . helm-projectile)
+         )
   )
 
 (use-package org-gcal
