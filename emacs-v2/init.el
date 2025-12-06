@@ -213,7 +213,7 @@
    ("C-x C-b" . helm-buffers-list)
    ("C-x b"   . helm-multi-files)
    ("M-y"     . helm-show-kill-ring)
-   ("C-c p"   . helm-projectile-ag)
+   ("C-x p"   . helm-projectile-ag)
    :map helm-map
    ("C-j" . helm-next-line)
    ("C-k" . helm-previous-line)
