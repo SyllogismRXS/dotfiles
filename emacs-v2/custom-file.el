@@ -12,7 +12,7 @@
    '(("melpa" . "https://melpa.org/packages/")
      ("elpa" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(ag tagedit lsp-dart tj3-mode cmake-mode org-drill sqlite sqlite3 darkroom org-roam org-roam-bibtex docker-tramp docker-compose-mode yaml robot-mode bazel-mode pdf-tools dockerfile-mode yaml-mode helm-tramp lua-mode markdown-mode nxml-mode auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package))
+   '(aidermacs ag tagedit lsp-dart tj3-mode cmake-mode org-drill sqlite sqlite3 darkroom org-roam org-roam-bibtex docker-tramp docker-compose-mode yaml robot-mode bazel-mode pdf-tools dockerfile-mode yaml-mode helm-tramp lua-mode markdown-mode nxml-mode auctex LaTeX/P visual-fill-column helm-ag flycheck-google-cpplint google-c-style org-gcal helm-projectile projectile helm-mt multi-term org-journal deft company magit helm which-key smooth-scrolling doom-themes all-the-icons use-package))
  '(package-vc-selected-packages
    '((helm-ag :vc-backend Git :url
               #("https://github.com/emacsattic/helm-ag" 0 36
