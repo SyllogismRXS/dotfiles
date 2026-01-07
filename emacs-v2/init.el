@@ -332,7 +332,7 @@
   (add-to-list 'org-file-apps '("\\.pdf" . "evince %s"))
   :bind
   ("C-c a" . org-agenda)
-  ("C-c c" . org-capture)
+  ;("C-c c" . org-capture)
   ("C-c C-x o" . org-clock-out)
   ("C-c C-x l" . org-clock-in-last)
   )
@@ -426,6 +426,20 @@
         )
   ;(add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync) ))
   ;(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync) ))
+  )
+
+(use-package aidermacs
+  :bind (("C-c a" . aidermacs-transient-menu))
+  :config
+  ; Set API_KEY in .bashrc, that will automatically picked up by aider or in elisp
+  ;(setenv "ANTHROPIC_API_KEY" "sk-...")
+  ; defun my-get-openrouter-api-key yourself elsewhere for security reasons
+  ;(setenv "OPENROUTER_API_KEY" (my-get-openrouter-api-key))
+  :custom
+  ; See the Configuration section below
+  (aidermacs-default-chat-mode 'architect)
+  ;(aidermacs-default-model "openrouter/google/gemini-2.0-flash-exp:free")
+  (aidermacs-default-model "gemini/gemini-3-pro-preview")
   )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
