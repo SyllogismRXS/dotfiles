@@ -586,7 +586,7 @@ awful.rules.rules = {
     --{ rule = { class = "Firefox" },
     --  properties = { screen = 1, tag = "1" } },
     { rule = { class = "rviz" },
-      properties = { screen = 2, tag = "3" } },
+      properties = { screen = 1, tag = "4" } },
     { rule = { class = "Gazebo" },
       properties = { screen = 1, tag = "5" } },
     { rule = { class = "discord" },
