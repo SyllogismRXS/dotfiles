@@ -18,7 +18,7 @@
               #("https://github.com/emacsattic/helm-ag" 0 36
                 (face font-lock-comment-face)
                 36 37
-                (rear-nonsticky t face font-lock-comment-face)))))
+                (face font-lock-comment-face rear-nonsticky t)))))
  '(use-package-always-defer t)
  '(use-package-always-ensure nil)
  '(use-package-verbose nil))
