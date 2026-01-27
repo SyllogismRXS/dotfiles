@@ -428,7 +428,7 @@
   ;(add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync) ))
   )
 
-(if (member (system-name) '("m16R2" "rif-Alienware-m16-R1-AMD"))
+(if (member (system-name) '("m16R2" "rif-Alienware-m16-R1-AMD" "syllo-gpu"))
     (use-package aidermacs
       :bind (("C-c a" . aidermacs-transient-menu))
       :config
