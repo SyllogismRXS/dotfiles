@@ -222,16 +222,16 @@
    )
   )
 
-; helm-ag
-; Note: Not in melpa right now.
-; Installed via package-vc-install https://github.com/emacsattic/helm-ag
-(use-package helm-ag
-  :ensure t
-  :defer nil
-  :bind
-  (("C-c f"     . helm-ag)
-   )
-  )
+;; helm-ag
+;; Note: Not in melpa right now.
+;; Installed via package-vc-install https://github.com/emacsattic/helm-ag
+;(use-package helm-ag
+;  :ensure t
+;  :defer nil
+;  :bind
+;  (("C-c f"     . helm-ag)
+;   )
+;  )
 
 ; helm-tramp
 (use-package helm-tramp
