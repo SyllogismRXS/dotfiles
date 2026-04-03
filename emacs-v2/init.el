@@ -440,7 +440,7 @@
       ; See the Configuration section below
       (aidermacs-default-chat-mode 'architect)
       ;(aidermacs-default-model "openrouter/google/gemini-2.0-flash-exp:free")
-      (aidermacs-default-model "gemini/gemini-3-pro-preview")
+      (aidermacs-default-model "gemini/gemini-3.1-pro-preview")
       ;(aidermacs-default-model "gemini-3.1-pro-preview")
       ))
 
