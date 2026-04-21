@@ -455,6 +455,8 @@
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   )
 
+(add-hook 'c-mode-common-hook #'clang-format+-mode)
+
 ;; (use-package flycheck-google-cpplint
 ;;   :ensure t
 ;;   :defer nil
