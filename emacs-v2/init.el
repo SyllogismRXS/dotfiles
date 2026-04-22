@@ -636,3 +636,5 @@
   (setq default-directory (file-name-directory new-name))
 
   (message "Renamed to %s." new-name))
+
+(add-hook 'python-mode-hook 'yapf-mode)
