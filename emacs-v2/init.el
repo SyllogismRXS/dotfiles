@@ -637,4 +637,12 @@
 
   (message "Renamed to %s." new-name))
 
-(add-hook 'python-mode-hook 'yapf-mode)
+                                        ;(add-hook 'python-mode-hook 'yapf-mode)
+(defun my/yapfify-conditionally ()
+  "Enable yapfify-mode only if .style.yapf exists in the Git root."
+  (when-let* ((root (vc-git-root default-directory))
+              (config-file (expand-file-name ".style.yapf" root)))
+    (when (file-exists-p config-file)
+      (yapfify-mode 1))))
+
+(add-hook 'python-mode-hook #'my/yapfify-conditionally)
