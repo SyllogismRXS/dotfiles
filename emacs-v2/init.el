@@ -432,17 +432,30 @@
     (use-package aidermacs
       :bind (("C-c a" . aidermacs-transient-menu))
       :config
-       ; Set API_KEY in .bashrc, that will automatically picked up by aider or in elisp
-       ;(setenv "ANTHROPIC_API_KEY" "sk-...")
-       ; defun my-get-openrouter-api-key yourself elsewhere for security reasons
-       ;(setenv "OPENROUTER_API_KEY" (my-get-openrouter-api-key))
+      ;; Set API_KEY in .bashrc, that will automatically picked up by aider or in elisp
+      ;;(setenv "ANTHROPIC_API_KEY" "sk-...")
+      ;; defun my-get-openrouter-api-key yourself elsewhere for security reasons
+      ;;(setenv "OPENROUTER_API_KEY" (my-get-openrouter-api-key))
       :custom
-      ; See the Configuration section below
-      (aidermacs-default-chat-mode 'architect)
-      ;(aidermacs-default-model "openrouter/google/gemini-2.0-flash-exp:free")
+      ;; See the Configuration section below
+      ;;(aidermacs-default-chat-mode 'architect)
+      (aidermacs-default-chat-mode 'code)
+      ;;(aidermacs-default-model "openrouter/google/gemini-2.0-flash-exp:free")
       (aidermacs-default-model "gemini/gemini-3.1-pro-preview")
-      ;(setq aidermacs-extra-args '("--edit-format" "diff"))
-      ;(aidermacs-default-model "gemini-3.1-pro-preview")
+      ;;(setq aidermacs-show-diff-after-change t)
+      ;;(setq aidermacs-extra-args '("--edit-format" "diff"))
+      ;;(aidermacs-default-model "gemini-3.1-pro-preview")
+
+      ;; Sets the default edit format to 'diff, instructing the model
+      ;; to output search/replace blocks rather than rewriting entire files.
+      (setq aidermacs-default-chat-mode 'diff)
+
+      ;; Capture changes and launch Emacs' ediff interface
+      ;; for reviewing, accepting, or rejecting AI edits.
+      ;;(setq aidermacs-show-diff-after-change t)
+
+      ;; Choose your preferred terminal backend ('vterm is recommended)
+      (setq aidermacs-backend 'vterm)
       ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
