@@ -36,7 +36,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local battery_widget
 if computer_name == "alien" or computer_name == "awm16r2" then
-   battery_widget = require("battery-widget")
+   -- TODO: battery_widget = require("battery-widget")
 end
 
 -- Enable hotkeys help widget for VIM and other apps
@@ -251,7 +251,8 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    if computer_name == "alien" or computer_name == "awm16r2" then
+    if false and (computer_name == "alien" or computer_name == "awm16r2") then
+       -- TODO:
        s.mywibox:setup {
           layout = wibox.layout.align.horizontal,
           { -- Left widgets
